@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #first {
+            background-color: cornsilk;
+            width: 220px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first">
+        <input type="text" name="" id="" placeholder="Color"><br>
+        <button>Generate Color</button>
+    </div>
+
+    <script>
+        const input=document.querySelector("input");
+        const btn=document.querySelector('button');
+        const allowedvalues='abcdef0123456789'
+
+        btn.onclick=()=>{
+            let randomcolor='#'
+            for(let i=0; i<6; i++)
+            randomcolor+=allowedvalues[Math.floor(Math.random()*allowedvalues.length)];
+            input.value=randomcolor;
+            document.body.style.backgroundColor=randomcolor;
+        };
+    </script>
+
+
+</body>
+
+ </html>
